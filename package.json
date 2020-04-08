@@ -1,0 +1,24 @@
+{
+  "name": "travel-app",
+  "version": "1.0.0",
+  "description": "The Travel Planner App is a one-page web app. Users are able to insert their anticipated travelling dates and location, and from that receive predicted weather and a picture of the location.",
+  "main": "webpack.dev.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jordan-Gillard/travel-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jordan-Gillard/travel-app/issues"
+  },
+  "homepage": "https://github.com/Jordan-Gillard/travel-app#readme",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}

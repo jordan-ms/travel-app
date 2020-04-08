@@ -1,0 +1,48 @@
+/* everything else */
+@media only screen and (min-width: 1201px){
+    body {
+        background: lightblue;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 75px repeat(3, 100px);
+        grid-template-areas:
+                "header ."
+                "picture dest"
+                "picture date"
+                "days-away weather";
+    }
+}
+
+/* tablet */
+@media only screen and (max-width: 1200px){
+    body {
+        background: lightgreen;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 75px repeat(4, 100px);
+        grid-template-areas:
+                "header ."
+                "picture dest"
+                "picture date"
+                "picture days-away"
+                "picture weather";
+    }
+}
+
+/* phone */
+@media only screen and (max-width: 600px){
+    body {
+        background: lightblue;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 75px 100px repeat(4, 50px);
+        grid-template-areas:
+            "header"
+            "picture"
+            "dest"
+            "date"
+            "days-away"
+            "weather";
+    }
+}
+
