@@ -1,0 +1,23 @@
+#header {
+    grid-area: header;
+}
+
+#picture {
+    grid-area: picture;
+}
+
+#dest {
+    grid-area: dest;
+}
+
+#date {
+    grid-area: date;
+}
+
+#days-away {
+    grid-area: days-away;
+}
+
+#weather {
+    grid-area: weather;
+}
