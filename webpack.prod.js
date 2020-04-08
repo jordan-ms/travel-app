@@ -2,17 +2,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/client/index.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'dist/dev'),
-    },
-    devServer: {
-        contentBase: path.join(__dirname, 'dist/dev'),
-        index: 'dist/dev/index.html',
-        port: 9000,
-        open: true
+        path: path.resolve(__dirname, 'dist/prod'),
     },
     module: {
         rules: [
