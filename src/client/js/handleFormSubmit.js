@@ -8,6 +8,9 @@ async function handleFormSubmit (event) {
     };
 
     console.log('Sending data to server: ', data);
+    Client.insertDepartureDate(date.value);
+    Client.calculateDaysAway(date.value);
+
 
     const serverEndpoint = 'http://localhost:3001/post-trip-info'
     const response = await fetch(serverEndpoint, {
@@ -24,7 +27,7 @@ async function handleFormSubmit (event) {
     });
 
     const serverResponse = await response.json()  // parses JSON response into native JavaScript objects
-    console.log(serverResponse);
+    Client.buildUi(serverResponse)
 }
 
 export { handleFormSubmit }
