@@ -1,16 +1,19 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const path = require('path');
 
 module.exports = {
     mode: 'development',
     entry: './src/client/index.js',
     output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist/dev'),
+        filename: 'index_bundle.js',
+        path: path.resolve(__dirname, 'dist/'),
+        libraryTarget: "var",
+        library: 'Client'
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist/dev'),
-        index: 'dist/dev/index.html',
+        contentBase: path.join(__dirname, 'dist/'),
+        index: 'index.html',
         port: 9000,
         open: true
     },
@@ -45,8 +48,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-                template: "./src/client/views/index.html"
+                template: "./src/client/views/index.html",
+                filename: './index.html'
             }
-        )
+        ),
+        new CleanWebpackPlugin()
     ]
 };
