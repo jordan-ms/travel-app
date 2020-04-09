@@ -1,0 +1,111 @@
+// I got the following box-shadow from https://codepen.io/hansmaad/pen/XNGWXy
+// I really liked it, so all credit goes to Hannes Kamecke
+$box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+  0 1px 5px 0 rgba(0, 0, 0, 0.12),
+  0 3px 1px -2px rgba(0, 0, 0, 0.2);
+$padding: 10px 20px 10px 20px;
+$border-radius: 25px;
+$background: #fad8d8;
+
+body {
+  padding: 10px 75px 10px 75px;
+  grid-template-areas:
+          "header ."
+          "main main"
+          "form form";
+  h1 {
+    padding-left: 20px;
+  }
+  main {
+    grid-area: main;
+    background: $background;
+    display: grid;
+    border-radius: $border-radius;
+    padding: $padding;
+    box-shadow: $box-shadow;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  background: $background;
+  border-radius: $border-radius;
+  padding: $padding;
+  box-shadow: $box-shadow
+}
+
+/* computer monitors */
+@media only screen and (min-width: 1201px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px 300px 70px;
+    main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 100px);
+      grid-template-areas:
+              "picture dest"
+              "picture date"
+              "days-away weather";
+
+    }
+  }
+}
+
+/* tablet */
+@media only screen and (max-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75px 400px 100px;
+    main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 100px);
+      grid-template-areas:
+              "picture dest"
+              "picture date"
+              "picture days-away"
+              "picture weather";
+    }
+  }
+}
+// This is to handle situations between
+// tablet and phone size where the form
+// gets squished.
+@media only screen and (max-width: 1000px) {
+  body {
+    grid-template-rows: 75px 400px 200px;
+    form {
+      flex-direction: column;
+    }
+  }
+}
+
+/* phone */
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 10px 35px 10px 35px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 75px 600px 200px;
+    grid-template-areas:
+            "header"
+            "main"
+            "form";
+    main {
+      grid-template-columns: 1fr;
+      grid-template-rows: 200px repeat(4, 100px);
+      grid-template-areas:
+              "picture"
+              "dest"
+              "date"
+              "days-away"
+              "weather";
+    }
+    form {
+      flex-direction: column;
+    }
+  }
+}
