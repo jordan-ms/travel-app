@@ -1,5 +1,6 @@
-const searchGeoNamesByLocation = require("./js/geoNamesSearch");
-const getWeather = require("./js/weatherBit");
+const searchGeoNamesByLocation = require('./js/geoNamesSearch');
+const getWeather = require('./js/getWeather');
+const getPicture = require('./js/getLocationPicture')
 
 const express = require('express');
 const cors = require('cors');
@@ -26,7 +27,14 @@ app.post('/post-trip-info', async function (req, res) {
     const geoNameDict = await searchGeoNamesByLocation(location);
     const latitude = geoNameDict['lat'];
     const longitude = geoNameDict['lng'];
-    const weather = await getWeather(latitude, longitude, date)
+    const weather = await getWeather(latitude, longitude, date);
+    const picture = await getPicture(location);
+    const responseDict = {
+        geoNameInfo: geoNameDict,
+        weather: weather,
+        picture: picture
+    }
+    res.send(responseDict);
 })
 
 app.listen(port, () => console.log(`app listening on port: ${port}`));

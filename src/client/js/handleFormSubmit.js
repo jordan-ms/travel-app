@@ -7,7 +7,7 @@ async function handleFormSubmit (event) {
         date: date.value
     };
 
-    console.log('Sending data to /post-trip-info: ', data);
+    console.log('Sending data to server: ', data);
 
     const serverEndpoint = 'http://localhost:3001/post-trip-info'
     const response = await fetch(serverEndpoint, {
@@ -22,7 +22,9 @@ async function handleFormSubmit (event) {
         referrerPolicy: 'no-referrer', // no-referrer, *client
         body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
-    return response.json(); // parses JSON response into native JavaScript objects
+
+    const serverResponse = await response.json()  // parses JSON response into native JavaScript objects
+    console.log(serverResponse);
 }
 
 export { handleFormSubmit }
