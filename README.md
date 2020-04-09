@@ -24,14 +24,14 @@ Run the following in your terminal:
 ```
 npm run build-prod
 ```
-The build will be generated in `dist/prod`.
+The build will be generated in `dist/`.
 
 ### Generating the development build
 Run the following in your terminal:
 ```
 npm run build-dev
 ```
-The build will be generated in `dist/dev`.
+The build will be generated in `dist/`.
 
 ### Running Webpack's dev server
 Run the following in your terminal:

@@ -13,12 +13,12 @@
     <div id="days-away">Distance in future:</div>
     <div id="weather">Typical weather:</div>
 </main>
-<form>
+<form onsubmit="return Client.handleFormSubmit(event)">
     <label for="dest-input">Your destination:</label>
     <input type="text" alt="destination" id="dest-input">
     <label for="departure-date">When are you leaving?</label>
-    <input type="date" alt="data of your departure" id="departure-date">
-    <button type="submit" id="submit-travel-details">Submit</button>
+    <input type="date" alt="date of your departure" id="departure-date">
+    <button type="submit" id="submit-travel-details" onclick="return Client.handleFormSubmit(event)" onsubmit="return Client.handleFormSubmit(event)">Submit</button>
 </form>
 </body>
 </html>
