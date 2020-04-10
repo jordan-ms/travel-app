@@ -38,4 +38,5 @@ async function _getPredictedWeather(lat, long, date) {
     return await weather.json();
 }
 
-module.exports = getWeather
+module.exports = getWeather;
+
