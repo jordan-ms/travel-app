@@ -26,3 +26,17 @@
 form {
   grid-area: form;
 }
+
+input {
+   &:hover {
+     background-color: aliceblue;
+     cursor: text;
+   }
+}
+
+button {
+  &:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+  }
+}
