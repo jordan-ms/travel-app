@@ -28,14 +28,19 @@ function insertDepartureDate(date) {
     dateElem.innerText = `Departing: ${date}`;
 }
 
-function calculateDaysAway(depDate, retDate) {
+function calculateDaysAway(depDate, retDate, element=null) {
     const departureDate = new Date(depDate);
     const currentDate = new Date();
     const returnDate = new Date(retDate);
     // There are 86.4 million milliseconds in a day.
     const daysAway = (departureDate - currentDate) / 86400000;
     const duration = (returnDate - departureDate) / 86400000;
-    const daysAwayElem = document.getElementById('days-away');
+    let daysAwayElem;
+    if (element === null) {
+        daysAwayElem = document.getElementById('days-away');
+    } else {
+        daysAwayElem = element;
+    }
     // "Float | 0" removes decimals
     daysAwayElem.innerText = `Distance in future: ${daysAway | 0} days. Trip duration: ${duration | 0} days.`
 }
