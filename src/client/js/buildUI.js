@@ -28,13 +28,16 @@ function insertDepartureDate(date) {
     dateElem.innerText = `Departing: ${date}`;
 }
 
-function calculateDaysAway(date) {
-    const departureDate = new Date(date);
+function calculateDaysAway(depDate, retDate) {
+    const departureDate = new Date(depDate);
     const currentDate = new Date();
+    const returnDate = new Date(retDate);
     // There are 86.4 million milliseconds in a day.
-    const dayDiff = (departureDate - currentDate) / 86400000;
+    const daysAway = (departureDate - currentDate) / 86400000;
+    const duration = (returnDate - departureDate) / 86400000;
     const daysAwayElem = document.getElementById('days-away');
-    daysAwayElem.innerText = `Distance in future: ${dayDiff | 0} days`  // removes decimals
+    // "Float | 0" removes decimals
+    daysAwayElem.innerText = `Distance in future: ${daysAway | 0} days. Trip duration: ${duration | 0} days.`
 }
 
 function insertWeather(data) {

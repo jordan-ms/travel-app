@@ -41,7 +41,9 @@ npm run dev-server
 The dev server will automatically open a new window with `src/client/index.html`
 loaded. The dev server watches all files that are linked to `src/client/index.js`
 and allows for awesome features like hot reload. More information can be found
-[here](https://webpack.js.org/configuration/dev-server/).
+[here](https://webpack.js.org/configuration/dev-server/). Please note that even
+if you are using the dev server, you still need to start the backend server (see
+below).
 
 ### Running the backend server
 Run the following in your terminal:

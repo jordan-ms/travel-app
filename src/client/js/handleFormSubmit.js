@@ -1,15 +1,16 @@
 async function handleFormSubmit (event) {
     event.preventDefault();
     const location = document.getElementById('dest-input');
-    const date = document.getElementById('departure-date');
+    const departureDate = document.getElementById('departure-date');
+    const returnDate = document.getElementById('return-date');
     const data = {
         location: location.value,
-        date: date.value
+        date: departureDate.value
     };
 
     console.log('Sending data to server: ', data);
-    Client.insertDepartureDate(date.value);
-    Client.calculateDaysAway(date.value);
+    Client.insertDepartureDate(departureDate.value);
+    Client.calculateDaysAway(departureDate.value, returnDate.value);
 
 
     const serverEndpoint = 'http://localhost:3001/post-trip-info'
