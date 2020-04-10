@@ -4,7 +4,7 @@
   "description": "The Travel Planner App is a one-page web app. Users are able to insert their anticipated travelling dates and location, and from that receive predicted weather and a picture of the location.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build-dev": "webpack --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js",
     "dev-server": "npm run build-dev && webpack-dev-server --config webpack.dev.js",
@@ -27,6 +27,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.1",
     "html-webpack-plugin": "^4.0.4",
+    "jest": "^25.3.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",

@@ -42,3 +42,18 @@ The dev server will automatically open a new window with `src/client/index.html`
 loaded. The dev server watches all files that are linked to `src/client/index.js`
 and allows for awesome features like hot reload. More information can be found
 [here](https://webpack.js.org/configuration/dev-server/).
+
+### Running the backend server
+Run the following in your terminal:
+```
+npm run express-server
+```
+This will run the express server on port 3001. You can then access the landing
+page at `http://localhost:3001/`.
+
+### Running tests
+Run the following in your terminal:
+```
+npm run test
+```
+This will run the `jest` tests in the `tests/` directory.
