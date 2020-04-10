@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "The Travel Planner App is a one-page web app. Users are able to insert their anticipated travelling dates and location, and from that receive predicted weather and a picture of the location.",
   "private": true,
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(scss|css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "scripts": {
     "test": "jest",
     "build-dev": "webpack --config webpack.dev.js",
